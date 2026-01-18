@@ -1,0 +1,89 @@
+.experience-section {
+    position: relative;
+}
+
+.experience-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Vertical Line */
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    /* Space for line */
+    padding: 2rem;
+    border-left: 4px solid var(--primary-color);
+    /* Highlight border instead of dot on line for simpler responsive */
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.6rem;
+    /* Adjust based on margin-left of item */
+    top: 2rem;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-color);
+    border: 4px solid var(--secondary-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.exp-period {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(100, 108, 255, 0.2);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.exp-company {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.exp-role {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.exp-desc {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .experience-timeline::before {
+        left: -10px;
+        /* Hide line or adjust */
+        display: none;
+    }
+
+    .timeline-dot {
+        display: none;
+    }
+
+    .timeline-item {
+        margin-left: 0;
+    }
+}

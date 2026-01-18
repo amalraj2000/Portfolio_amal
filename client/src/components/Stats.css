@@ -1,0 +1,51 @@
+.stats-section {
+    padding: 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.skills-ticker {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.skills-ticker p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    letter-spacing: 0.5px;
+}
+
+.skills-ticker strong {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
