@@ -74,83 +74,83 @@ export const projects = [
         title: 'Emcor Group (UK)',
         category: 'Enterprise / Laravel',
         description: 'Managed 5+ projects for this major UK business in mechanical & construction fields. Successfully migrated 4 legacy projects to the latest Laravel 12 version.',
-        tech: ['Laravel', 'MySQL', 'Vue.js']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 2,
         title: 'Landlord',
         category: 'Real Estate Web App',
         description: 'A comprehensive platform for real estate management, facilitating interactions between landlords and tenants.',
-        tech: ['Laravel', 'React', 'Inertia']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 3,
         title: 'CBT',
         category: 'Healthcare / Mental Health',
         description: 'A mental health web application focused on Cognitive Behavioral Therapy resources and tracking.',
-        tech: ['Laravel', 'Livewire', 'Alpine']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 4,
         title: 'Parkteufel',
         category: 'Booking System',
         description: 'German parking space booking platform allowing users to reserve and manage parking spots efficiently.',
-        tech: ['Laravel', 'Stripe', 'Google Maps API']
+        tech: ['Laravel', 'Stripe', 'Google Maps API', 'MySQL']
     },
     {
         id: 5,
         title: 'Pratham',
         category: 'Education / Solar',
         description: 'Web platform for solar training classes, managing course content and student progress.',
-        tech: ['Laravel', 'Filament', 'MySQL']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 6,
         title: 'Trailer Rebel',
         category: 'Entertainment',
         description: 'Movies trailer web app for browsing and viewing the latest film previews.',
-        tech: ['API Integration', 'React', 'Tailwind']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 7,
         title: 'Thobe ai',
         category: 'Image generation',
         description: 'AI image generation platform for generating images based on user input.',
-        tech: ['Python', 'FastAPI', 'React']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 8,
         title: 'Emcor Compliance',
         category: 'Employee portal',
         description: 'Employee portal for Emcor Compliance.',
-        tech: ['Laravel', 'Bootstrap']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 9,
         title: 'Emcor Nation',
         category: 'Employee Photo competition',
         description: 'Employee photo competition for Emcor employees.',
-        tech: ['Laravel', 'AWS S3']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 10,
         title: 'Emcor Location',
         category: 'Emcor company locations',
         description: 'Emcor company locations can filtered by country and other options.',
-        tech: ['Laravel', 'Google Maps']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 11,
         title: 'Emcor Perfmech',
         category: 'Emcor company registeration portal',
         description: 'Emcor company registeration portal.',
-        tech: ['Laravel', 'Livewire']
+        tech: ['Laravel', 'MySQL']
     },
     {
         id: 12,
         title: 'ACE Mentor',
         category: 'Student mentorship platform',
         description: 'Student mentorship platform.',
-        tech: ['Laravel', 'Filament']
+        tech: ['Laravel', 'MySQL']
     }
 ];
