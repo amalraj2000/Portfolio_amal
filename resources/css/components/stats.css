@@ -1,46 +1,95 @@
 .stats-section {
-    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    padding: 4rem 0;
+    margin-top: -4rem;
+    /* Overlap nicely with Hero */
+    z-index: 20;
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
-    margin-bottom: 2rem;
 }
 
 .stat-card {
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--duration-normal), box-shadow var(--duration-normal);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--duration-normal);
+    transform-origin: left;
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
 }
 
 .stat-value {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    color: var(--secondary-color);
     margin-bottom: 0.5rem;
+    line-height: 1;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-heading);
 }
 
 .stat-label {
+    color: var(--text-secondary);
     font-size: 1rem;
-    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
 
 .skills-ticker {
+    margin-top: 4rem;
     padding: 1.5rem;
     text-align: center;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
 }
 
 .skills-ticker p {
-    font-size: 1.1rem;
-    color: #ccc;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 .skills-ticker strong {
-    color: var(--primary-color);
+    color: var(--text-primary);
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        margin-top: 0;
+        padding-top: 2rem;
+    }
+
+    .stat-value {
+        font-size: 2.5rem;
+    }
 }
