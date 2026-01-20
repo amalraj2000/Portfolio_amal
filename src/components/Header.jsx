@@ -19,7 +19,8 @@ export default function Header() {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container header-content">
                 <a href="#home" className="logo">
-                    AR<span>.</span>
+                    {/* AR<span>.</span> */}
+                    {/* <img src="/logo.png" alt="Logo" /> */}
                 </a>
 
                 <nav className={`nav ${mobileMenuOpen ? 'active' : ''}`}>

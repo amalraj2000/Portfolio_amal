@@ -21,14 +21,24 @@ export default function Education() {
                 }
             );
 
-            // Grid Items Stagger
+            // Enhanced Stagger for grid items
             gsap.fromTo('.education-card',
-                { opacity: 0, y: 30 },
+                {
+                    opacity: 0,
+                    y: 50,
+                    scale: 0.95
+                },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
-                    stagger: 0.2,
+                    scale: 1,
+                    duration: 0.6,
+                    stagger: {
+                        amount: 0.8,
+                        grid: "auto",
+                        from: "start"
+                    },
+                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: '.education-grid',
                         start: "top 80%"
@@ -40,6 +50,35 @@ export default function Education() {
         return () => ctx.revert();
     }, []);
 
+    // Hover effect
+    const onHoverEnter = ({ currentTarget }) => {
+        gsap.to(currentTarget, {
+            y: -10,
+            scale: 1.02,
+            boxShadow: '0 20px 30px rgba(0,0,0,0.2)',
+            duration: 0.3
+        });
+        gsap.to(currentTarget.querySelector('.edu-icon'), {
+            scale: 1.1,
+            rotate: 5,
+            duration: 0.3
+        });
+    };
+
+    const onHoverLeave = ({ currentTarget }) => {
+        gsap.to(currentTarget, {
+            y: 0,
+            scale: 1,
+            boxShadow: 'none',
+            duration: 0.3
+        });
+        gsap.to(currentTarget.querySelector('.edu-icon'), {
+            scale: 1,
+            rotate: 0,
+            duration: 0.3
+        });
+    };
+
     return (
         <section id="education" className="section education-section" ref={sectionRef}>
             <div className="container">
@@ -49,8 +88,13 @@ export default function Education() {
                 </div>
 
                 <div className="education-grid">
-                    {educationData.map((edu, index) => (
-                        <div key={edu.id} className="education-card glass-card">
+                    {educationData.map((edu) => (
+                        <div
+                            key={edu.id}
+                            className="education-card glass-card"
+                            onMouseEnter={onHoverEnter}
+                            onMouseLeave={onHoverLeave}
+                        >
                             <div className="edu-header">
                                 <div className="edu-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 0 6 0 9 5 0-5 3-5 9-5v-5" /></svg>

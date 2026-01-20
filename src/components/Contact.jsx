@@ -18,25 +18,55 @@ export default function Contact() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo('.contact-info-wrapper',
-                { opacity: 0, x: -50 },
+            // Header
+            gsap.fromTo('.section-header',
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    scrollTrigger: { trigger: '.section-header', start: "top 85%" }
+                }
+            );
+
+            // Contact Info Stagger
+            gsap.fromTo('.contact-card',
+                { opacity: 0, x: -30 },
                 {
                     opacity: 1,
                     x: 0,
                     duration: 0.8,
-                    scrollTrigger: { trigger: '.contact-grid', start: "top 70%" }
+                    stagger: 0.2,
+                    ease: "power2.out",
+                    scrollTrigger: { trigger: '.contact-info-wrapper', start: "top 80%" }
                 }
             );
 
+            // Form Slide In
             gsap.fromTo('.contact-form-wrapper',
                 { opacity: 0, x: 50 },
                 {
                     opacity: 1,
                     x: 0,
-                    duration: 0.8,
-                    scrollTrigger: { trigger: '.contact-grid', start: "top 70%" }
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: { trigger: '.contact-form-wrapper', start: "top 80%" }
                 }
             );
+
+            // Floating Icons Loop
+            gsap.to('.contact-icon', {
+                y: -10,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                stagger: {
+                    each: 0.5,
+                    from: "random"
+                }
+            });
+
         }, sectionRef);
 
         return () => ctx.revert();
@@ -47,7 +77,7 @@ export default function Contact() {
             <div className="contact-bg-1"></div>
 
             <div className="container">
-                <div className="section-header fade-in-up">
+                <div className="section-header">
                     <h2 className="section-title">Get In <span className="text-gradient">Touch</span></h2>
                     <p className="section-subtitle">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
                 </div>
@@ -115,9 +145,9 @@ export default function Contact() {
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="btn btn-primary form-submit">
+                            <button type="submit" className="btn btn-primary form-submit group">
                                 Send via WhatsApp
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                <svg className="group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                             </button>
                         </form>
                     </div>
