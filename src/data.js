@@ -7,13 +7,18 @@ export const stats = [
 
 export const skills = [
     'PHP / Laravel',
-    'React.js',
+    'HTML/CSS',
+    'JS',
     'MySQL',
     'PostgreSQL',
     'DynamoDB',
-    'Javascript',
+    'MongoDB',
     'Docker',
-    'Git'
+    'Git',
+    'S3 BUCKET',
+    'React.js',
+    'Node.js',
+    'AWS',
 ];
 
 export const experiences = [

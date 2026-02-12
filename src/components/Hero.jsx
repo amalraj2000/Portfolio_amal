@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import profileImg from '../assets/amal2.png';
 
 export default function Hero() {
     const heroRef = useRef(null);
@@ -42,6 +43,11 @@ export default function Hero() {
                     { opacity: 0, y: -20 },
                     { opacity: 1, y: 0, duration: 0.6 },
                     "-=0.2"
+                )
+                .fromTo('.hero-image-container',
+                    { opacity: 0, scale: 0.8, x: 50 },
+                    { opacity: 1, scale: 1, x: 0, duration: 1, ease: 'back.out(1.7)' },
+                    "-=1.0"
                 );
 
             // Floating animation for background elements
@@ -95,20 +101,27 @@ export default function Hero() {
 
             <div className="container">
                 <div className="hero-content">
-                    <span className="hero-greeting">Welcome to my portfolio</span>
-                    <h1 className="hero-title">
-                        Hi, I'm <span className="name">Amal Raj V</span>
-                    </h1>
-                    <h2 className="hero-subtitle">Software Engineer | PHP & Laravel Specialist | Writing Clean, Maintainable Code</h2>
-                    <p className="hero-description">
-                       I craft exceptional digital experiences with modern technologies. I am a PHP Laravel Developer with 2+ years of hands-on experience in building clean, maintainable, and scalable applications. My expertise includes Laravel, PHP, MySQL, and cloud-based architectures. I am passionate about clean code, efficient system design, and delivering high-quality user-focused solutions
-                    </p>
-                    <div className="hero-cta">
-                        <a href="#projects" className="btn btn-primary group">
-                            View My Work
-                            <svg className="group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '0.5rem' }}><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                        <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+                    <div className="hero-text">
+                        <span className="hero-greeting">Welcome to my portfolio</span>
+                        <h1 className="hero-title">
+                            Hi, I'm <span className="name">Amal Raj V</span>
+                        </h1>
+                        <h2 className="hero-subtitle">Software Engineer | PHP & Laravel Specialist | Writing Clean, Maintainable Code</h2>
+                        <p className="hero-description">
+                            I craft exceptional digital experiences with modern technologies. I am a PHP Laravel Developer with 2+ years of hands-on experience in building clean, maintainable, and scalable applications. My expertise includes Laravel, PHP, MySQL, and cloud-based architectures. I am passionate about clean code, efficient system design, and delivering high-quality user-focused solutions
+                        </p>
+                        <div className="hero-cta">
+                            <a href="#projects" className="btn btn-primary group">
+                                View My Work
+                                <svg className="group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '0.5rem' }}><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                            <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div className="hero-image-container">
+                        <div className="hero-img-wrapper">
+                            <img src={profileImg} alt="Amal Raj V" className="hero-img" />
+                        </div>
                     </div>
                 </div>
             </div>
