@@ -71,7 +71,7 @@ export const educationData = [
 export const projects = [
     {
         id: 1,
-        title: 'Emcor Group (UK)',
+        title: 'UK Contruction Group',
         category: 'Enterprise / Laravel',
         description: 'Managed 5+ projects for this major UK business in mechanical & construction fields. Successfully migrated 4 legacy projects to the latest Laravel 12 version.',
         tech: ['Laravel', 'MySQL']
@@ -120,35 +120,35 @@ export const projects = [
     },
     {
         id: 8,
-        title: 'Emcor Compliance',
+        title: 'Compliance',
         category: 'Employee portal',
-        description: 'Employee portal for Emcor Compliance.',
+        description: 'Employee portal for Compliance.',
         tech: ['Laravel', 'MySQL']
     },
     {
         id: 9,
-        title: 'Emcor Nation',
+        title: 'Nation',
         category: 'Employee Photo competition',
-        description: 'Employee photo competition for Emcor employees.',
+        description: 'Employee photo competition for employees.',
         tech: ['Laravel', 'MySQL']
     },
     {
         id: 10,
-        title: 'Emcor Location',
-        category: 'Emcor company locations',
-        description: 'Emcor company locations can filtered by country and other options.',
+        title: 'Location',
+        category: 'Company locations',
+        description: 'Company locations can filtered by country and other options.',
         tech: ['Laravel', 'MySQL']
     },
     {
         id: 11,
-        title: 'Emcor Perfmech',
-        category: 'Emcor company registeration portal',
-        description: 'Emcor company registeration portal.',
+        title: 'Perfmech',
+        category: 'Company registeration portal',
+        description: 'Company registeration portal.',
         tech: ['Laravel', 'MySQL']
     },
     {
         id: 12,
-        title: 'ACE Mentor',
+        title: 'Mentoring web appin',
         category: 'Student mentorship platform',
         description: 'Student mentorship platform.',
         tech: ['Laravel', 'MySQL']

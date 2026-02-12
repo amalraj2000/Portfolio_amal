@@ -1,6 +1,7 @@
 .experience-section {
     position: relative;
     padding: 6rem 0;
+    overflow: hidden;
 }
 
 /* Background Accents */
@@ -215,7 +216,7 @@
     .timeline-content-wrapper,
     .timeline-item:nth-child(even) .timeline-content-wrapper,
     .timeline-item:nth-child(odd) .timeline-content-wrapper {
-        width: 100%;
+        width: calc(100% - 50px);
         margin-left: 50px;
         padding: 0;
         margin-right: 0;

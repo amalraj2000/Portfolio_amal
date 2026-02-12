@@ -1,6 +1,7 @@
 .contact-section {
     position: relative;
     padding: 6rem 0;
+    overflow: hidden;
 }
 
 .contact-bg-1 {
