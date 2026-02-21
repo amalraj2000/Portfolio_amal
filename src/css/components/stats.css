@@ -18,29 +18,14 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    transition: transform var(--duration-normal), box-shadow var(--duration-normal);
-}
-
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
-    transform: scaleX(0);
-    transition: transform var(--duration-normal);
-    transform-origin: left;
+    transition: all var(--duration-normal) var(--ease-spring);
+    background: var(--glass-bg);
 }
 
 .stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.stat-card:hover::before {
-    transform: scaleX(1);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    border-color: var(--accent-indigo);
 }
 
 .stat-value {
@@ -56,32 +41,34 @@
 }
 
 .stat-label {
-    color: var(--text-secondary);
-    font-size: 1rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-weight: 600;
 }
 
 .skills-ticker {
-    margin-top: 4rem;
-    padding: 1.5rem;
+    margin-top: 5rem;
+    padding: 2rem;
     text-align: center;
-    border-radius: 50px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(5px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--backdrop-blur));
 }
 
 .skills-ticker p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
 }
 
 .skills-ticker strong {
     color: var(--text-primary);
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {

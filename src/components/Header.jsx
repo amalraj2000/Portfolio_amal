@@ -23,12 +23,32 @@ export default function Header() {
                 </a>
 
                 <nav className={`nav ${mobileMenuOpen ? 'active' : ''}`}>
-                    <ul>
-                        <li><a href="#home" onClick={closeMenu}>Home</a></li>
-                        <li><a href="#experience" onClick={closeMenu}>Experience</a></li>
-                        <li><a href="#education" onClick={closeMenu}>Education</a></li>
-                        <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-                        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                    <ul className="nav-list">
+                        <li>
+                            <a href="#home" onClick={closeMenu} className="nav-link">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#experience" onClick={closeMenu} className="nav-link">
+                                <span>Experience</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#education" onClick={closeMenu} className="nav-link">
+                                <span>Education</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" onClick={closeMenu} className="nav-link">
+                                <span>Projects</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onClick={closeMenu} className="nav-link">
+                                <span>Contact</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 

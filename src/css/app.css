@@ -11,39 +11,46 @@
 @import './components/contact.css';
 
 :root {
-  /* Premium Dark Palette */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #121212;
-  --bg-tertiary: #1A1A1A;
+  /* Ultra-Modern Dark Palette */
+  --bg-primary: #030712;
+  /* Deepest Indigo/Black */
+  --bg-secondary: #0f172a;
+  /* Slate Dark */
+  --bg-tertiary: #1e293b;
 
   /* Text Colors */
-  --text-primary: #EDEDED;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
-  --text-accent: #3b82f6;
+  --text-primary: #f8fafc;
+  /* Slate 50 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --text-muted: #64748b;
+  /* Slate 500 */
+  --text-accent: #6366f1;
+  /* Indigo 500 */
 
-  /* Brand Accents */
-  --accent-blue: #3b82f6;
-  --accent-purple: #8b5cf6;
+  /* Brand Accents - Vibrant & Sleek */
+  --accent-indigo: #6366f1;
   --accent-cyan: #06b6d4;
-  --accent-glow: rgba(59, 130, 246, 0.5);
+  --accent-blue: #3b82f6;
+  --accent-violet: #8b5cf6;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  --gradient-dark: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, #0a0a0a 100%);
-  --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
 
-  /* Glassmorphism */
-  --glass-bg: rgba(20, 20, 20, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.1);
+  /* Enhanced Glassmorphism */
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-bright: rgba(255, 255, 255, 0.15);
   --backdrop-blur: 16px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.15);
+  /* Shadows - Layered & Subtle */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.2);
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
@@ -51,14 +58,17 @@
 
   /* Spacing & Layout */
   --container-width: 1200px;
-  --header-height: 80px;
+  --header-height: 72px;
   --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
 
   /* Transitions */
-  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-spring: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.2s;
   --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
 }
 
 * {
@@ -120,6 +130,7 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
 }
 
 .bg-primary {
@@ -146,10 +157,6 @@ ul {
   color: var(--text-muted);
 }
 
-.text-accent {
-  color: var(--text-accent);
-}
-
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--backdrop-blur));
@@ -157,20 +164,21 @@ ul {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
+  transition: all var(--duration-normal) var(--ease-spring);
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
-  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-full);
   font-weight: 500;
   font-family: var(--font-heading);
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: all var(--duration-normal) var(--ease-spring);
   cursor: pointer;
   border: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .btn-primary {
@@ -181,18 +189,18 @@ ul {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
   border: 1px solid var(--glass-border);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--glass-border-bright);
 }
 
 /* Custom Scrollbar */

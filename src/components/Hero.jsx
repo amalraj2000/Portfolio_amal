@@ -104,11 +104,11 @@ export default function Hero() {
                     <div className="hero-text">
                         <span className="hero-greeting">Welcome to my portfolio</span>
                         <h1 className="hero-title">
-                            Hi, I'm <span className="name">Amal Raj V</span>
+                            Hi, I'm <span className="text-gradient">Amal Raj V</span>
                         </h1>
-                        <h2 className="hero-subtitle">Software Engineer | PHP & Laravel Specialist | Writing Clean, Maintainable Code</h2>
+                        <h2 className="hero-subtitle">Software Engineer | PHP & Laravel Specialist</h2>
                         <p className="hero-description">
-                            I craft exceptional digital experiences with modern technologies. I am a PHP Laravel Developer with 2+ years of hands-on experience in building clean, maintainable, and scalable applications. My expertise includes Laravel, PHP, MySQL, and cloud-based architectures. I am passionate about clean code, efficient system design, and delivering high-quality user-focused solutions
+                            I craft exceptional digital experiences with modern technologies. As a Software Engineer with 2+ years of experience, I specialize in building scalable architecture and delivering high-quality, user-focused solutions.
                         </p>
                         <div className="hero-cta">
                             <a href="#projects" className="btn btn-primary group">

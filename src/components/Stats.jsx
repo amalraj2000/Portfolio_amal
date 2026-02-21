@@ -84,17 +84,17 @@ export default function Stats() {
             <div className="container">
                 <div className="stats-grid">
                     {stats.map((stat, index) => (
-                        <div key={index} className="glass-card stat-card hover:scale-105 transition-transform duration-300">
-                            <h3 className="stat-value text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-purple">
+                        <div key={index} className="glass-card stat-card">
+                            <h3 className="stat-value text-gradient">
                                 {stat.value}
                             </h3>
-                            <p className="stat-label mt-2 text-text-muted">{stat.label}</p>
+                            <p className="stat-label">{stat.label}</p>
                         </div>
                     ))}
                 </div>
 
-                <div className="skills-ticker mt-12 text-center p-4 glass-card inline-block w-full">
-                    <p className="text-lg"><strong>Tech & Tools:</strong> <span className="text-text-muted">{skills.join(' • ')}</span></p>
+                <div className="skills-ticker">
+                    <p><strong>Tech & Tools:</strong> {skills.join(' • ')}</p>
                 </div>
             </div>
         </section>

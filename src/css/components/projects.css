@@ -14,16 +14,16 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: transform var(--duration-normal), box-shadow var(--duration-normal), border-color var(--duration-normal);
+    transition: all var(--duration-normal) var(--ease-spring);
     position: relative;
     overflow: hidden;
+    background: var(--glass-bg);
 }
 
-/* Hover Glow Effect handled by .glass-card:hover generally, but specific accent here */
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.1);
-    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent-indigo);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
 .project-content {
@@ -41,15 +41,15 @@
 }
 
 .project-category {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1em;
     color: var(--accent-cyan);
-    padding: 0.25rem 0.75rem;
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px solid rgba(6, 182, 212, 0.2);
-    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    background: rgba(6, 182, 212, 0.05);
+    border: 1px solid rgba(6, 182, 212, 0.1);
+    border-radius: var(--radius-full);
 }
 
 .project-icon {
@@ -76,7 +76,7 @@
 }
 
 .project-card:hover .project-title {
-    color: var(--accent-blue);
+    color: var(--accent-indigo);
 }
 
 .project-desc {
@@ -97,17 +97,19 @@
 }
 
 .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text-secondary);
-    transition: background var(--duration-fast);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-muted);
+    transition: all var(--duration-fast);
+    border: 1px solid transparent;
 }
 
 .project-card:hover .tech-tag {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
 .projects-cta {

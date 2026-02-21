@@ -55,12 +55,14 @@ export default function Projects() {
         gsap.to(currentTarget, {
             y: -10,
             scale: 1.02,
-            boxShadow: '0 20px 30px rgba(0,0,0,0.2)',
-            duration: 0.3
+            boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(99, 102, 241, 0.2)',
+            borderColor: 'rgba(99, 102, 241, 0.4)',
+            duration: 0.4,
+            ease: 'power2.out'
         });
         gsap.to(currentTarget.querySelector('.project-icon'), {
             scale: 1.1,
-            rotate: 5,
+            color: '#6366f1',
             duration: 0.3
         });
     };
@@ -70,11 +72,13 @@ export default function Projects() {
             y: 0,
             scale: 1,
             boxShadow: 'none',
-            duration: 0.3
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            duration: 0.4,
+            ease: 'power2.out'
         });
         gsap.to(currentTarget.querySelector('.project-icon'), {
             scale: 1,
-            rotate: 0,
+            color: '#64748b',
             duration: 0.3
         });
     };
