@@ -80,11 +80,11 @@ export default function Stats() {
     }, []);
 
     return (
-        <section className="stats-section" ref={statsRef}>
+        <section id="stats" className="stats-section reveal-up" ref={statsRef}>
             <div className="container">
                 <div className="stats-grid">
                     {stats.map((stat, index) => (
-                        <div key={index} className="glass-card stat-card">
+                        <div key={index} className="glass-card stat-card reveal-up">
                             <h3 className="stat-value text-gradient">
                                 {stat.value}
                             </h3>
@@ -93,7 +93,7 @@ export default function Stats() {
                     ))}
                 </div>
 
-                <div className="skills-ticker">
+                <div className="skills-ticker reveal-up">
                     <p><strong>Tech & Tools:</strong> {skills.join(' • ')}</p>
                 </div>
             </div>

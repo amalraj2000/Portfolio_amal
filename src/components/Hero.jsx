@@ -52,8 +52,8 @@ export default function Hero() {
 
             // Floating animation for background elements
             gsap.to('.hero-bg-glow', {
-                y: 50,
-                x: -30,
+                y: 100,
+                x: -50,
                 duration: 5,
                 repeat: -1,
                 yoyo: true,
@@ -61,8 +61,8 @@ export default function Hero() {
             });
 
             gsap.to('.hero-bg-glow-2', {
-                y: -40,
-                x: 40,
+                y: -100,
+                x: 80,
                 duration: 6,
                 repeat: -1,
                 yoyo: true,
@@ -70,21 +70,51 @@ export default function Hero() {
                 delay: 1
             });
 
+            // Parallax on Scroll for background glows
+            gsap.to('.hero-bg-glow', {
+                yPercent: 50,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+
+            gsap.to('.hero-bg-glow-2', {
+                yPercent: -30,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+
         }, heroRef);
 
         return () => ctx.revert();
     }, []);
 
-    // Parallax effect on mouse move
+    // Parallax effect on mouse move (Subtle)
     const handleMouseMove = (e) => {
         const { clientX, clientY } = e;
-        const xPos = (clientX / window.innerWidth - 0.5) * 20;
-        const yPos = (clientY / window.innerHeight - 0.5) * 20;
+        const xPos = (clientX / window.innerWidth - 0.5) * 15;
+        const yPos = (clientY / window.innerHeight - 0.5) * 15;
 
-        gsap.to('.hero-content', {
+        gsap.to('.hero-text', {
             x: xPos,
             y: yPos,
-            duration: 1,
+            duration: 1.5,
+            ease: 'power2.out'
+        });
+
+        gsap.to('.hero-img-wrapper', {
+            x: -xPos * 0.5,
+            y: -yPos * 0.5,
+            duration: 1.5,
             ease: 'power2.out'
         });
     };
@@ -101,7 +131,7 @@ export default function Hero() {
 
             <div className="container">
                 <div className="hero-content">
-                    <div className="hero-text">
+                    <div className="hero-text reveal-left">
                         <span className="hero-greeting">Welcome to my portfolio</span>
                         <h1 className="hero-title">
                             Hi, I'm <span className="text-gradient">Amal Raj V</span>
@@ -110,7 +140,7 @@ export default function Hero() {
                         <p className="hero-description">
                             I craft exceptional digital experiences with modern technologies. As a Software Engineer with 2+ years of experience, I specialize in building scalable architecture and delivering high-quality, user-focused solutions.
                         </p>
-                        <div className="hero-cta">
+                        <div className="hero-cta reveal-up">
                             <a href="#projects" className="btn btn-primary group">
                                 View My Work
                                 <svg className="group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '0.5rem' }}><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -118,7 +148,7 @@ export default function Hero() {
                             <a href="#contact" className="btn btn-secondary">Get In Touch</a>
                         </div>
                     </div>
-                    <div className="hero-image-container">
+                    <div className="hero-image-container reveal-right">
                         <div className="hero-img-wrapper">
                             <img src={profileImg} alt="Amal Raj V" className="hero-img" />
                         </div>

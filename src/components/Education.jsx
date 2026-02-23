@@ -91,7 +91,7 @@ export default function Education() {
                     {educationData.map((edu) => (
                         <div
                             key={edu.id}
-                            className="education-card glass-card"
+                            className="education-card glass-card reveal-up"
                             onMouseEnter={onHoverEnter}
                             onMouseLeave={onHoverLeave}
                         >

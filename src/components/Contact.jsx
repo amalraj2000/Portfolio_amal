@@ -84,7 +84,7 @@ export default function Contact() {
 
                 <div className="contact-grid">
                     {/* Contact Info */}
-                    <div className="contact-info-wrapper">
+                    <div className="contact-info-wrapper reveal-left">
 
                         <div className="glass-card contact-card">
                             <div className="contact-icon icon-blue">
@@ -119,7 +119,7 @@ export default function Contact() {
                     </div>
 
                     {/* Contact Form */}
-                    <div className="contact-form-wrapper glass-card">
+                    <div className="contact-form-wrapper glass-card reveal-right">
                         <form className="contact-form" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>

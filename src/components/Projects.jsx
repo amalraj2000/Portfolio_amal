@@ -86,7 +86,7 @@ export default function Projects() {
     return (
         <section id="projects" className="section projects-section" ref={sectionRef}>
             <div className="container">
-                <div className="section-header">
+                <div className="section-header reveal-up">
                     <h2 className="section-title">Featured <span className="text-gradient">Projects</span></h2>
                     <p className="section-subtitle">Here are some of the 10+ live projects I've delivered.</p>
                 </div>
@@ -95,7 +95,7 @@ export default function Projects() {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="project-card glass-card"
+                            className="project-card glass-card reveal-up"
                             onMouseEnter={onHoverEnter}
                             onMouseLeave={onHoverLeave}
                         >
